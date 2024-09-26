@@ -23,4 +23,12 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     "eol-last": ["error", "always"]
   },
+  rules: {
+    'prettier/prettier': [
+        'error',
+        {
+            endOfLine: 'auto',
+        },
+    ],
+  },
 };
