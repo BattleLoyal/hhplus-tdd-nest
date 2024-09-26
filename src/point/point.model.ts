@@ -1,8 +1,17 @@
-export type UserPoint = {
+import { UserId } from 'src/user/userId.model';
+import { PointValidator } from './point.validator';
+
+export class UserPoint {
   id: number;
   point: number;
   updateMillis: number;
-};
+
+  constructor(userId: UserId, point: number) {
+    PointValidator.validatePoint(point);
+    this.id = userId.id;
+    this.point = point;
+  }
+}
 
 /**
  * 포인트 트랜잭션 종류
